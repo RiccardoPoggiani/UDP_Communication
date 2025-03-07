@@ -5,6 +5,11 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
+/**
+ *
+ * @author Riccardo Poggiani
+ */
+
 public class Server {
     DatagramSocket dSocket;
     DatagramPacket inPacket;
@@ -51,7 +56,7 @@ public class Server {
         System.out.println(BLUE + "- IL MESSAGGIO RICEVUTO DAL CLIENT " + clientAddress + "DALLA PORTA " + clientPort + " E': " + messageIn + RESET);
     }
 
-    public void manda(){
+    public void invia(){
         messageOut = BLUE + "Ciao Client, ho ricevuto il tuo messaggio!" + RESET;
         bufferOut = messageOut.getBytes();
         outPacket = new DatagramPacket(bufferOut, bufferOut.length, clientAddress, clientPort);
